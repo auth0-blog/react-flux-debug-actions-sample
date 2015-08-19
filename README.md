@@ -4,8 +4,8 @@ Intro
 
 ## Using it
 
-First start the backend: `npm run backend` (which will listen on http://localhost:3001).
-Then start the web application: `npm run dev` (whichi will run on http://localhost:4501/webpack-dev-server/).
+- [ ] First start the backend: `npm run backend` (which will listen on ![http://localhost:3001](http://localhost:3001)).
+- [ ] Then start the web application: `npm run dev` (which will run on ![http://localhost:4501/webpack-dev-server/](http://localhost:4501/webpack-dev-server/)).
 
 Once you have everything running you can start the app in 2 browser windows:
 
