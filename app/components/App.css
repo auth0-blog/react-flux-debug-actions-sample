@@ -1,0 +1,50 @@
+a {
+  color: #ff4081;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+body {
+  font-size: 13px;
+  line-height: 20px;
+}
+
+
+#page {
+  padding-top: 100px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+h2.title {
+    font-size: 24px;
+    line-height: 32px;
+    padding-top: 16px;
+    margin-bottom: 12px;
+    letter-spacing: 0;
+}
+
+.reply-item h3 {
+  font-size: 18px;
+  font-weight: 200;
+  margin-bottom: 10px;
+}
+
+.reply-item h3 strong {
+  font-weight: 500;
+}
+
+.ticket-item {
+  margin-bottom: 10px;
+}
