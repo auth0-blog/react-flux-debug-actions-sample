@@ -56,6 +56,24 @@ var tickets = [
 // In memory storage for sessions and action logs.
 var sessions = { };
 
+/*
+ * Fake login implementation.
+ */
+app.post('/login', function(req, res, next) {
+  var sessionId = Math.floor(Math.random() * 9999) + 1000;
+  sessions[sessionId] = {
+    user: req.body.username,
+    start: new Date(),
+    actions: []
+  };
+
+  return res.json({
+    username: req.body.username,
+    sessionId: sessionId
+  });
+});
+
+
 app.get('/tickets', function(req, res, next) {
   setTimeout(function() { res.json(tickets); }, 3000);
 });
@@ -92,14 +110,6 @@ app.get('/sessions', function(req, res) {
 app.post('/sessions/:sessionId/logs', function(req, res, next) {
   var action = req.body;
   action.added = new Date();
-
-  if (!sessions[req.params.sessionId]) {
-    sessions[req.params.sessionId] = {
-      user: 'John',
-      start: new Date(),
-      actions: []
-    };
-  }
 
   sessions[req.params.sessionId].actions.push(action);
 

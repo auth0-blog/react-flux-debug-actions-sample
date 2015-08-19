@@ -40,7 +40,7 @@ export default class DebugSessionOverview extends React.Component {
       if (this.state.sessions) {
         return Object.keys(this.state.sessions).map((sessionId, index) => {
           let session = this.state.sessions[sessionId];
-          return <DebugSession key={index} sessionId={sessionId} session={session} onDebugSession={() => DebugSessionActions.debugSession(session)} />
+          return <DebugSession key={index} sessionId={sessionId} session={session} onDebugSession={(sid, s, action) => DebugSessionActions.debugSession(session, action)} />
         });
       } else {
         return <div></div>

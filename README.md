@@ -6,6 +6,8 @@ Intro
 
 Using It
 
+http://localhost:4501/webpack-dev-server/
+
 ## How does it work?
 
 Link to blog post

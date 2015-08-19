@@ -9,8 +9,8 @@ export default class DebugSession extends React.Component {
     onDebugSession: PropTypes.func.required
   }
 
-  _onDebugClicked() {
-    this.props.onDebugSession(this.props.sessionId, this.props.session);
+  _onDebugClicked(action) {
+    this.props.onDebugSession(this.props.sessionId, this.props.session, action);
   }
 
   render() {
@@ -28,6 +28,9 @@ export default class DebugSession extends React.Component {
                   return (
                     <ListItem key={index} leftAvatar={<Avatar backgroundColor={Colors.yellow600}>A</Avatar>} secondaryText={action.added}>
                       {action.actionType}
+                      <div style={{ float: 'right' }}>
+                        <FlatButton label="Replay Until Here" onClick={() => this._onDebugClicked(action) } />
+                      </div>
                     </ListItem>
                   );
                 })
@@ -35,7 +38,7 @@ export default class DebugSession extends React.Component {
             </List>
           </CardText>
           <CardActions>
-            <FlatButton label="Debug Session" onTouchTap={() => this._onDebugClicked()}/>
+            <FlatButton label="Replay Complete Session" onTouchTap={() => this._onDebugClicked()}/>
           </CardActions>
         </Card>
       </div>

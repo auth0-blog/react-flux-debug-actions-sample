@@ -17,20 +17,28 @@ export default {
    *   - It will replay all actions.
    *   - It will send a STOP_DEBUG action to notify that debugging has completed (this will for example re-enable http requests).
    */
-  debugSession: (session) => {
+  debugSession: (session, untilAction) => {
     console.log('Debugging session:', session);
 
     dispatch({ debug: true, actionType: RESET });
     dispatch({ debug: true, actionType: START_DEBUG });
 
-    // Replay all actions.
-    session.actions.forEach((action) => {
-      console.log(' > Dispatching debug action:', action);
-      dispatch({
-        ...action,
-        debug: true
-      })
-    });
+    // Replay all actions with a delay.
+    for (var i = 0; i < session.actions.length; i++) {
+      let action = session.actions[i];
+
+      setTimeout(() => {
+        console.log(' > Dispatching debug action:', action);
+        dispatch({
+          ...action,
+          debug: true
+        });
+      }, i * 250);
+
+      if (untilAction && untilAction === action) {
+        break;
+      }
+    }
 
     dispatch({ debug: true, actionType: STOP_DEBUG });
   }

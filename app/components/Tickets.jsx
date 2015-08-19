@@ -1,5 +1,5 @@
 import React from 'react';
-import { Snackbar, LinearProgress } from 'material-ui';
+import { Snackbar, LinearProgress, FlatButton } from 'material-ui';
 
 import Error from './Error';
 import Ticket from './Ticket';
@@ -38,12 +38,24 @@ export default class Tickets extends React.Component {
     this.setState(this.getTicketState());
   }
 
+  _onReload() {
+    TicketActions.loadOpenTickets();
+  }
+
   render() {
     let renderTickets = () => {
       if (this.state.tickets) {
-        return this.state.tickets.map((ticket, index) => {
-          return <Ticket key={`ticket_${index}`} ticket={ticket} onCloseTicket={() => TicketActions.close(ticket)} />;
-        });
+        return (
+          <div>
+          {
+            this.state.tickets.map((ticket, index) => {
+              return <Ticket key={`ticket_${index}`} ticket={ticket} onCloseTicket={() => TicketActions.close(ticket)} />;
+            })
+          }
+          <div style={{ float: 'right' }}>
+            <FlatButton label="reload" onClick={() => this._onReload() }  />
+          </div>
+        </div>);
       } else {
         return <div></div>
       }
