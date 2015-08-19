@@ -4,9 +4,13 @@ Intro
 
 ## Using it
 
-Using It
+First start the backend: `npm run backend` (which will listen on http://localhost:3001).
+Then start the web application: `npm run dev` (whichi will run on http://localhost:4501/webpack-dev-server/).
 
-http://localhost:4501/webpack-dev-server/
+Once you have everything running you can start the app in 2 browser windows:
+
+ - In the first window, you'll be an end user. If you delete the third item, the app will crash.
+ - In the second window, you'll be a developer. Click the DEBUG button on the top right, choose to replay the end user's session and look at your Console. You'll see the error of the end user.
 
 ## How does it work?
 
