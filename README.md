@@ -1,6 +1,6 @@
 # React - Debugging Flux Actions
 
-Intro
+Source code for the blog post: [Logging & Debugging in React with Flux: Replaying your user’s actions](https://auth0.com/blog/2015/08/25/logging-and-debugging-in-react-with-flux-replaying-your-users-actions/)
 
 ## Using it
 
