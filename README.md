@@ -14,7 +14,7 @@ Once you have everything running you can start the app in 2 browser windows:
 
 ## How does it work?
 
-Link to blog post
+You can find more information on our [blog post](https://auth0.com/blog/2015/08/25/logging-and-debugging-in-react-with-flux-replaying-your-users-actions/)
 
 ## Issue Reporting
 
